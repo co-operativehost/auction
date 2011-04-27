@@ -58,7 +58,7 @@
 <div id="bottom">
   <div id="footer">
     <div id="copyrights">
-      <p>Â© Copyright <a href="http://www.co-operativehost.com" target="_blank">Co-oerativehost.com</a></p>
+      <p>&copy; Copyright <a href="http://www.co-operativehost.com" target="_blank">Co-oerativehost.com</a></p>
     </div>
     <div id="feedback">
       <ul>

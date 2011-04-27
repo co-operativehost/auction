@@ -11,16 +11,27 @@ $note="";
   <div class="incontnent">
     <div><img src="images/inTop.png" width="900" height="10" /></div>
     <div style="background-image:url(images/inMid.png); width: 860px; padding: 20px;">
-      <h3 align="center">Rigister Now</h3>
+      <h3 align="center">Edit Profile</h3>
 <div id="contactform">
-<form method="post" action="regisiterprocess.php">
+<?
+	$sql="select * from users where id='".$_SESSION['User_ID']."'";
+	$res=mysql_query($sql);
+	$row=mysql_fetch_array($res);
+	
+	$user_name=$row['userName'];
+	$first_name=$row['firstName'];
+	$sur_name=$row['surName'];
+	$email=$row['email'];
+	$phone=$row['telephone'];
+	$address=$row['address'];
+	$city=$row['city'];
+	$country_id=$row['country_id'];
+	
+	
+?>
+<form method="post" action="edit_profile_process.php">
 
         <ol>
-        	
-        	<li>
-      <br />  <h4><?=$note;?><h4><br />
-        </li>
-        	
         <li>
       <br />  <h4>Login Details<h4><br />
         </li>
@@ -28,7 +39,7 @@ $note="";
         <li>
             <label for="name">* User Name<br />
             </label>
-            <input name="userName" class="text" id="name" />
+            <input name="userName" class="text" id="name" value="<?=$user_name;?>" />
          </li>
          <li>
          
@@ -47,23 +58,23 @@ $note="";
        <br /> <h4> Personal Details</h4><br />
             <label for="name">* First Name<br />
             </label>
-            <input name="firstName" class="text" id="name" />
+            <input name="firstName" class="text" id="name" value="<?=$first_name;?>" />
          </li>
          <li>
             <label for="name">* Surname<br />
             </label>
-            <input name="surName" class="text" id="name" />
+            <input name="surName" class="text" id="name" value="<?=$sur_name;?>" />
          </li>
          <li>
          
             <label for="label2">* Your e-mail<br />
             </label>
-            <input id="label2" name="uemail" class="text" />
+            <input id="label2" name="uemail" class="text" value="<?=$email;?>" />
             </li>
             <li>
             <label for="label">Phone<br />
             </label>
-            <input id="label" name="phone" class="text" />
+            <input id="label" name="phone" class="text" value="<?=$phone;?>" />
           </li>
             <li>
            <br /> <h4>Address</h4><br />
@@ -72,7 +83,7 @@ $note="";
           <li>
             <label for="email">Address<br />
             </label>
-            <input id="email" name="address" class="text" />
+            <input id="email" name="address" class="text" value="<?=$address;?>" />
           </li>
           
           <li>
@@ -81,26 +92,24 @@ $note="";
             <?php
 			while($row=mysql_fetch_array($result))
 			{
-			
-			?>
-            <option value="<?php echo $row['country_id']; ?>">
-            <?php
-			echo $row['country_name'];
-			?>
-            </option>
-            <?php
+				if($row['country_id']==$country_id)
+					$sel="selected";
+				else
+					$sel="";
+				echo "<option value=$row[country_id] $sel>$row[country_name]</option>";
 			}
+			
 			?>
             </select>
           </li>
           <li>
             <label for="email">City<br />
             </label>
-            <input id="email" name="city" class="text" />
+            <input id="email" name="city" class="text" value="<?=$city;?>" />
           </li>
 
        <li>
-            <input type="submit" value="Regisiter Now" class="btn"  onclick="return check(this.form);"/>
+            <input type="submit" value="       Update" class="btn"  onclick="return check(this.form);"/>
           </li>
         </ol>
         </form>
@@ -134,12 +143,8 @@ function check(frm)
  }
 
 	
-	if(frm.pass.value=="")
-	{	
-	alert('please enter the password');
-	frm.pass.focus();
-	return false;
-	}
+	if(frm.pass.value!="")
+	{
 	 if(frm.pass.value.length > 15) 
  {     
  		alert("Too Longe Password");    
@@ -161,6 +166,7 @@ function check(frm)
 	alert('no match between Confirm password and the password');	
 	frm.conpass.focus();
 	return false;
+	}
 	}
 	 if(frm.firstName.value.length > 25) 
  {     

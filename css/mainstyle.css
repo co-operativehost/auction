@@ -76,7 +76,7 @@ a img { border:0px none; }
 #contactform * { color:#5f5f5f; }
 #contactform ol { margin:0; padding:0; list-style:none; }
 #contactform li { margin:0; padding:0; background:none; border:none; display:block; }
-#contactform label { margin:0; width:110px; display:block; padding:3px 0; font:bold 12px Arial, Helvetica, sans-serif; color:#5f5f5f; text-transform:capitalize; }
+#contactform label { margin:0; width:130px; display:block; padding:3px 0; font:bold 12px Arial, Helvetica, sans-serif; color:#5f5f5f; text-transform:capitalize; }
 #contactform label span { display:block; font:normal 10px Arial, Helvetica, sans-serif; }
 #contactform input.text { width:540px; border:1px solid #d0d0d0; margin:3px 0; padding:5px 2px; height:16px; background:#ffffff; }
 #contactform textarea { width:540px; border:1px solid #d0d0d0; margin:3px 0; padding:2px; background:#ffffff; }

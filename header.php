@@ -40,7 +40,9 @@ $(document).ready(function(){
   <div id="menu">
     <ul>
       <li><a href="index.php">Home</a></li>
-      <li><a href="regisiter.php">Regisiter</a></li>
+    <? if($_SESSION["active_user"]!=1) { ?>
+      <li><a href="regisiter.php">Regisiter</a></li> <? } else { ?>
+      	  <li><a href="edit_profile.php">Edit Profile</a></li> <? } ?>
       <li><a href="help.php">FAQ</a></li>
       <li><a href="products.php">Products</a></li>
       <li><a href="contactus.php">Contact us</a></li>
