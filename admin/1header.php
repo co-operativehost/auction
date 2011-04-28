@@ -23,6 +23,7 @@ include("val.php"); check("admin");
       <h3>Main</h3>
       <ul class="nav">
       	<li><a href="index.php">Home Page</a></li>
+      	<li><a href="settings.php">Settings</a></li>
         <li><a href="categories_manage.php">Categories Management</a></li>
         <li><a href="products_manage.php">Add Product</a></li>
         <li><a href="galary_manage.php">Gallery Management</a></li>
