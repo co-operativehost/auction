@@ -14,7 +14,7 @@ if(isset($_REQUEST["keyword_title"]) ||$_REQUEST['delete']==1){
      	}
      	
      	if(!empty($topic_id)){
-   	echo "SSS".$_REQUEST['delete'];
+   //	echo "SSS".$_REQUEST['delete'];
    	   if($_REQUEST['delete']!=1)
     $sql="UPDATE key_words SET key_word='$keyword_title' WHERE id=$topic_id";
        
@@ -99,7 +99,7 @@ while ($row=mysql_fetch_array($res))
 <?php 
 include '1footer.php';
 ?>
-<script type="text/javascript">
+  <script type="text/javascript">
 function validate(frm)
 {
 if(frm.keyword_title.value=="")
@@ -117,4 +117,4 @@ if(confirm("Are you sure you want to delete it"))
 window.location = "keywords_manage.php?cat_id="+id+"&delete=1";
 }
 }
-</script>
+</script> 

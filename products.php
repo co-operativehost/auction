@@ -16,7 +16,9 @@ echo"<script type='text/javascript' language='javascript'>
 								   while($row=mysql_fetch_array($res))
 								   {
 									   $i+=5;
-								   echo"{title: '".$row['pro_name']."', countdown: 'Apr 11, 2011 14:".$i.":00', highestBidder: 'Highest bidder 1'}, ";
+								   echo"{title: '".$row['pro_name']."',
+								    countdown: 'Apr 29, 2011 14:".$i.":00',
+									highestBidder: 'Highest bidder 1'}, ";
 								   }
 								  echo" ];";
 						echo"</script>";
@@ -30,7 +32,7 @@ echo"<script type='text/javascript' language='javascript'>
                                 <!-- Update the time here to be a time in the future, in order to test the page -->
                                 <div class='Countdown'>${countdown}</div>
                                 <div class='HighBidder'>${highestBidder}</div>
-                                <div class='BidButton'>---BidBUTTON---</div>
+                                <div class='BidButton'><input type='button' value='Bid' /></div>
                         </div>
                 </script>
 	<?php		

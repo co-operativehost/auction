@@ -20,14 +20,15 @@ include("val.php"); check("admin");
   </div>
   <div id="middle">
     <div id="left-column">
-      <h3>Header</h3>
+      <h3>Main</h3>
       <ul class="nav">
+      	<li><a href="index.php">Home Page</a></li>
         <li><a href="categories_manage.php">Categories Management</a></li>
         <li><a href="products_manage.php">Add Product</a></li>
         <li><a href="galary_manage.php">Gallery Management</a></li>
         <li><a href="keywords_manage.php">Keywords Management</a></li>
-        <li><a href="keywords_manage.php">Offers Management</a></li>
-        <li class="last"><a href="index.php">Home Page</a></li>
+        <li class="last"><a href="keywords_manage.php">Offers Management</a></li>
+        
       </ul>
       <a href="account_edit.php" class="link">Edit Admin Account</a> <a href="signout.php" class="link">Log Out</a> </div>
     <div id="center-column">
