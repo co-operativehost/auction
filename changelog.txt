@@ -1,1 +1,28 @@
 atef 27-4-2011:make a new page for edit profile + editing the register form
+==================
+
+
+==================
+Zain 28.04.2011: 
+
+
+<DB>
+CREATETABLE`coh_auction`.`settings` (
+ `id` INT( 11)NOTNULL ,
+ `main_email` VARCHAR( 255)NULL ,
+ `twitter` VARCHAR( 100)NULL ,
+ `facebook` VARCHAR( 100)NULL ,
+ `site_active` ENUM('0','1')NULL ,
+ PRIMARYKEY (`id`) 
+) ENGINE=MYISAM ;
+</DB>
+
+
+<PROJECT>
+rss folder
+
+
+
+
+</PROJECT>
+==================
